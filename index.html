@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Terminal banku</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row text-center">
+                            <div class="col-md-9">
+                                <div class="col-md-4">
+                                    <button id="one" value="1" class="btn btn-lg btn-block btn-default">1</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="two" value="2" class="btn btn-lg btn-block btn-default">2</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="three" value="3" class="btn btn-lg btn-block btn-default">3</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="Cancel" class="btn btn-lg btn-block btn-danger">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-9">
+                                <div class="col-md-4">
+                                    <button id="four" class="btn btn-lg btn-block btn-default">4</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="five" class="btn btn-lg btn-block btn-default">5</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="six" class="btn btn-lg btn-block btn-default">6</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="Delete" class="btn btn-lg btn-block btn-warning">Delete</button>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-9">
+                                <div class="col-md-4">
+                                    <button id="seven" class="btn btn-lg btn-block btn-default">7</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="eight" class="btn btn-lg btn-block btn-default">8</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="nine" class="btn btn-lg btn-block btn-default">9</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="Disable" class="btn btn-lg btn-block btn-default disabled">Disable</button>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-9">
+                                <div class="col-md-4">
+                                    <button id="minus" class="btn btn-lg btn-block btn-default">-</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="zero" class="btn btn-lg btn-block btn-default">0</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="plus" class="btn btn-lg btn-block btn-default">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="Enter" class="btn btn-lg btn-block btn-success">Enter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="ekran">PANEL VIEW</label>
+                <input type="text" id="ekran" class="form-control" size="8" disabled="disabled" placeholder="Wpisz kod PIN" width="50px" height="100px">
+            </div>
+        </div>
+    </div>
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/require.js" data-main="js_1/main"></script>
+</body>
+</html>
