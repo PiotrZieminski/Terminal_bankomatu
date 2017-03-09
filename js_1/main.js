@@ -4,10 +4,11 @@
 require.config({
     baseUrl: "./js_1",
     paths: {
-        'panelview': 'Classes/panelview',
-        'keyboard': 'Classes/keyboard'
+        'keyboard': 'Classes/keyboard',
+        'app': 'app',
+        'Data': 'Classes/Data',
     },
     waitSeconds: 15
 });
 
-requirejs(['app', 'panelview', 'keyboard']);
+requirejs(['app', 'Data', 'keyboard']);

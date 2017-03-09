@@ -1,39 +1,41 @@
-/**
- * Created by piotr on 02.03.2017.
- */
-
-
-var error = 0;
-//var KODPIN = 0;$('#Cancel').attr('enabled', 'enabled');
-$('#Enter').click(function () {
-    if($('#ekran').val().length == 9 && $('#ekran').val() == 'PIN: ' + $SECRET_KEY) {
-        $('#ekran').val('PIN jest OK');
-    } else if ($('#ekran').val().length < 9) {
-        $('#ekran').val('Niepoprawna ilosć znaków');
-        setTimeout( function () {
-            $('#ekran').val('PIN: ');
+define (
+    ['Data'],
+    function (Data) {
+        setTimeout(function () {
+            Data.$ekran.val(Data.MSG.pin);
         }, 2500);
-    } else {
-        if (error == 2) {
-            $('#ekran').val('Blokata terminala');
-            $('button[id]').attr('disabled', true);
-            $('#Cancel').attr('disabled', false);
-            $('#Delete').attr('disabled', true);
-        }
-        if (error == 1) {
-            $('#ekran').val('Pin jest Zły. Pozostało prób 1');
-            error++;
-            setTimeout( function () {
-                $('#ekran').val('PIN: ');
-            }, 2500);
-        }
-        if (error == 0) {
-            $('#ekran').val('Pin jest Zły. Pozostało prób 2');
-            error++;
-            setTimeout( function () {
-                $('#ekran').val('PIN: ');
-            }, 2500);
-        }
-    }
-    $('#Delete').attr('disabled', true);
-});
+        Data.$enter.click(function () {
+            if (Data.$ekran.val().length == Data.CONSTANTS.OK_LENGTH && Data.$ekran.val() == Data.MSG.pin + Data.$SECRET_KEY) {
+                Data.$ekran.val(Data.MSG.pin_ok);
+            } else if (Data.$ekran.val().length < Data.CONSTANTS.OK_LENGTH) {
+                Data.$ekran.val(Data.MSG.low_marks);
+                $('#delete').attr('disabled', true);
+                setTimeout(function () {
+                    Data.$ekran.val(Data.MSG.pin);
+
+                }, 2500);
+            } else {
+                if (Data.wrong_key == 2) {
+                    Data.$ekran.val(Data.MSG.terminal_block);
+                    Data.$button_msg.attr('disabled', true);
+                    $('#cancel').attr('disabled', false);
+                }
+                if (Data.wrong_key == 1) {
+                    Data.$ekran.val(Data.MSG.key_wrong + '1');
+                    Data.wrong_key++;
+                    $('#delete').attr('disabled', true);
+                    setTimeout(function () {
+                        $('#ekran').val(Data.MSG.pin);
+                    }, 2500);
+                }
+                if (Data.wrong_key == 0) {
+                    Data.$ekran.val(Data.MSG.key_wrong + '2');
+                    Data.wrong_key++;
+                    $('#delete').attr('disabled', true);
+                    setTimeout(function () {
+                        Data.$ekran.val(Data.MSG.pin);
+                    }, 2500);
+                }
+            }
+        });
+    });
